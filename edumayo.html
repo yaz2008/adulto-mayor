@@ -23,90 +23,41 @@
     .container{max-width:1150px;margin:0 auto}
     .hero{
       background:linear-gradient(180deg,#ffdbe9,#fff0f6);
-      padding:26px;border-radius:12px;text-align:center;
-      box-shadow:0 6px 18px rgba(179,43,108,0.06)
+      padding:26px;border-radius:12px;text-align:center;box-shadow:0 6px 18px rgba(179,43,108,0.06)
     }
     .hero h1{margin:0;color:var(--accent);font-size:28px}
     .hero p{text-align:justify;margin-top:10px;color:#6f2947}
 
-    .panel{
-      background:var(--panel);
-      padding:20px;
-      border-radius:12px;
-      margin-top:20px;
-      box-shadow:0 8px 24px rgba(150,40,80,0.04)
-    }
+    .panel{background:var(--panel);padding:20px;border-radius:12px;margin-top:20px;box-shadow:0 8px 24px rgba(150,40,80,0.04)}
     h2{color:var(--accent);margin-top:0}
     p, li{text-align:justify}
 
-    /* 📌 CORRECCIÓN IMPORTANTE:
-       Imagen SIEMPRE dentro del contenedor responsivo */
-    .layout-row{
-      display:flex;
-      gap:18px;
-      align-items:flex-start;
-      margin:18px 0;
-      flex-wrap:wrap;
-    }
+    /* layout con imágenes */
+    .layout-row{display:flex;gap:18px;align-items:flex-start;margin:18px 0}
+    .layout-row .text{flex:1}
 
-    .layout-row .text{
-      flex:1;
-      min-width:240px;
-    }
-
+    /* ⬇⬇ CORREGIDO para que las imágenes NO se salgan */
     .layout-row img{
-      width:360px;
-      max-width:100%;
-      height:260px;
+      width:100%;
+      max-width:360px;
+      height:auto;
       object-fit:cover;
       border-radius:10px;
       box-shadow:0 8px 22px rgba(100,30,70,0.06);
-    }
-
-    .layout-row.reverse{
-      flex-direction:row-reverse;
-    }
-
-    /* VIDEO */
-    .video{
-      margin-top:14px;
-      overflow:hidden;
-      border-radius:10px;
-      box-shadow:0 10px 30px rgba(100,30,70,0.06)
-    }
-    .video iframe{
-      width:100%;
-      height:360px;
-      border:0;
       display:block;
     }
 
-    /* TIPS */
-    .tips{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:12px;
-      margin-top:10px;
-    }
-    .tip{
-      background:#fff5fa;
-      padding:12px;
-      border-radius:8px;
-      border-left:4px solid var(--accent);
-    }
+    .layout-row.reverse{flex-direction:row-reverse}
 
-    /* 📱 RESPONSIVO PARA CELULAR */
+    .video{margin-top:14px;overflow:hidden;border-radius:10px;box-shadow:0 10px 30px rgba(100,30,70,0.06)}
+    .video iframe{width:100%;height:360px;border:0;display:block}
+
+    .tips{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px}
+    .tip{background:#fff5fa;padding:12px;border-radius:8px;border-left:4px solid var(--accent)}
     @media (max-width:900px){
-      .layout-row{
-        flex-direction:column;
-      }
-      .layout-row img{
-        width:100%;
-        height:220px;
-      }
-      .tips{
-        grid-template-columns:1fr;
-      }
+      .layout-row{flex-direction:column}
+      .layout-row img{max-width:100%;width:100%;height:auto}
+      .tips{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -122,7 +73,9 @@
       <p>Las personas adultas mayores tienen derechos reconocidos que deben protegerse: acceso a una salud integral, seguridad social, protección contra la violencia y maltrato, participación en decisiones familiares y comunitarias, y servicios con enfoque de género cuando aplique. Garantizar estos derechos implica capacitar a profesionales y sensibilizar a la población.</p>
 
       <div class="layout-row">
-        <img src="5.jpg" alt="imagen">
+        <!-- ⬇⬇ IMAGEN CORREGIDA -->
+        <img src="5.jpg">
+
         <div class="text">
           <h3>Protección frente al maltrato</h3>
           <p>El maltrato hacia adultos mayores puede ser físico, emocional, económico o institucional. Detectarlo a tiempo y denunciarlo es clave. Las comunidades deben contar con protocolos de atención, redes de apoyo y servicios legales accesibles.</p>
@@ -139,7 +92,7 @@
           <h3>Atención integral</h3>
           <p>Los modelos efectivos combinan atención médica, apoyo psicosocial, rehabilitación y acompañamiento para frenar la pérdida de autonomía. Además, los cuidadores familiares necesitan formación y descanso, y las redes comunitarias deben proveer apoyo.</p>
 
-          <div class="tips">
+          <div class="tips" aria-hidden="false">
             <div class="tip"><strong>Prevención</strong><br> Programas de detección temprana de enfermedades crónicas.</div>
             <div class="tip"><strong>Movilidad</strong><br> Transporte adaptado y ciudades accesibles.</div>
             <div class="tip"><strong>Bienestar mental</strong><br> Espacios seguros para socializar y recibir apoyo psicológico.</div>
@@ -147,7 +100,8 @@
           </div>
         </div>
 
-        <img src="55.webp" alt="imagen">
+        <!-- ⬇⬇ IMAGEN CORREGIDA -->
+        <img src="55.webp">
       </div>
     </section>
 
@@ -156,15 +110,17 @@
       <p>El envejecimiento activo implica mantener la autonomía, la participación social y la productividad según las capacidades de cada persona. Fomentarlo requiere oportunidades reales: voluntariado, empleo flexible, participación en políticas locales y vinculación con escuelas y centros culturales para generar proyectos intergeneracionales.</p>
 
       <div class="video">
-        <iframe 
-          src="https://drive.google.com/file/d/1oid8lXuRUcVto9k7TD2p2QahdTgJSIdG/preview"
-          allow="autoplay; encrypted-media"
-          title="Video desde Google Drive">
-        </iframe>
-      </div>
+        <div class="video-container">
+          <iframe 
+            src="https://drive.google.com/file/d/1oid8lXuRUcVto9k7TD2p2QahdTgJSIdG/preview"
+            allow="autoplay; encrypted-media"
+            title="Video desde Google Drive">
+          </iframe>
+        </div>
 
-      <h3 style="margin-top:12px">Programas que impulsan inclusión</h3>
-      <p>Ejemplos efectivos incluyen programas municipales de centros diurnos, cursos gratuitos, transporte subvencionado para citas médicas y redes de voluntariado que generan acompañamiento telefónico o presencial para personas en riesgo de aislamiento.</p>
+        <h3 style="margin-top:12px">Programas que impulsan inclusión</h3>
+        <p>Ejemplos efectivos incluyen programas municipales de centros diurnos, cursos gratuitos, transporte subvencionado para citas médicas y redes de voluntariado que generan acompañamiento telefónico o presencial para personas en riesgo de aislamiento.</p>
+      </div>
     </section>
 
     <section class="panel" aria-labelledby="a4">
