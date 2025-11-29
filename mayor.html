@@ -1,4 +1,5 @@
-<!doctype html>
+
+  <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8"/>
@@ -36,7 +37,6 @@
     p, li{font-size:15px;text-align:justify}
     ul{margin-left:18px}
 
-    /* FILAS */
     .fila{
       display:flex;
       gap:20px;
@@ -47,13 +47,13 @@
       flex:1;
     }
 
-    /* ✅ IMÁGENES RESPONSIVAS QUE NO SE SALEN */
+    /* IMÁGENES RESPONSIVAS */
     .fila img{
       width:100%;
-      max-width:420px;
       height:auto;
       border-radius:12px;
       object-fit:cover;
+      max-width:100%; /* Esta línea asegura que no se salga NUNCA */
       box-shadow:0 8px 20px rgba(5,30,60,0.08);
       display:block;
     }
@@ -70,23 +70,12 @@
 
     footer{text-align:center;color:#1b3b57;margin-top:18px;font-size:14px}
 
-    /* 📱 RESPONSIVE EN CELULAR */
     @media (max-width:900px){
       .fila{flex-direction:column}
-      .fila img{
-        max-width:100%;
-        width:100%;
-        height:auto;
-      }
+      .fila img{max-width:100%;width:100%;height:auto}
     }
 
-    .callout{
-      background:linear-gradient(90deg,#eef9ff,#f6fcff);
-      padding:12px;
-      border-radius:10px;
-      border-left:4px solid var(--accent);
-      margin:12px 0
-    }
+    .callout{background:linear-gradient(90deg,#eef9ff,#f6fcff);padding:12px;border-radius:10px;border-left:4px solid var(--accent);margin:12px 0}
     .muted{color:#55728a;font-size:14px}
   </style>
 </head>
@@ -100,87 +89,89 @@
     <section class="card" aria-labelledby="s1">
       <h2 id="s1">I. Panorama general y demografía</h2>
 
-      <p>El aumento de la esperanza de vida ha transformado la composición etaria de muchas sociedades. Las personas mayores de 60 años conforman una proporción creciente de la población, lo que obliga a repensar servicios, políticas públicas, infraestructura y modelos de apoyo familiar. Este cambio demográfico tiene impacto en salud pública, economía doméstica, mercado laboral y planificación urbana.</p>
+      <p>El aumento de la esperanza de vida ha transformado la composición etaria de muchas sociedades. Las personas mayores de 60 años conforman una proporción creciente de la población...</p>
 
       <div class="callout">
         <span style="margin-left:8px">El envejecimiento poblacional exige estrategias de prevención, promoción de la salud y creación de entornos inclusivos.</span>
       </div>
 
       <h3>Contribuciones sociales y culturales</h3>
-      <p>Las personas adultas mayores son garantes de memoria colectiva: transmiten saberes técnicos, habilidades manuales, tradiciones y valores. En muchos hogares cumplen funciones de cuidado intergeneracional (como apoyar a nietos), participan en la economía informal y en movimientos comunitarios.</p>
+      <p>Las personas adultas mayores son garantes de memoria colectiva...</p>
     </section>
 
     <section class="card" aria-labelledby="s2">
       <h2 id="s2">II. Salud y bienestar — prevención y cuidado</h2>
 
+      <!-- ⬇⬇ ARREGLO: imagen dentro de una col -->
       <div class="fila reverse">
         <div class="col">
           <h3>Salud física y preventiva</h3>
-          <p>El enfoque preventivo (actividad física regular, alimentación equilibrada, cribado y seguimiento médico) reduce la incidencia de enfermedades crónicas. Programas de detección temprana, vacunación y seguimiento de condiciones como hipertensión, diabetes y osteoporosis son esenciales para mantener la autonomía.</p>
+          <p>El enfoque preventivo...</p>
 
           <h4>Recomendaciones prácticas</h4>
           <ul>
-            <li>Actividad física moderada 3-5 veces por semana (caminar, natación, gimnasia suave).</li>
-            <li>Revisiones médicas periódicas y control de medicamentos.</li>
-            <li>Alimentación rica en fibra, proteínas magras y adecuada hidratación.</li>
+            <li>Actividad física...</li>
+            <li>Revisiones médicas...</li>
+            <li>Alimentación equilibrada...</li>
           </ul>
         </div>
 
-        <img src="0.jpeg">
+        <div class="col">
+          <img src="0.jpeg">
+        </div>
       </div>
 
       <h3>Salud mental y aislamiento</h3>
-      <p>La soledad y el aislamiento son factores de riesgo para depresión y deterioro cognitivo. Las iniciativas comunitarias (grupos, talleres, centros de día) y el apoyo familiar disminuyen el riesgo y mejoran la calidad de vida.</p>
+      <p>La soledad y el aislamiento...</p>
     </section>
 
     <section class="card" aria-labelledby="s3">
       <h2 id="s3">III. Derechos, inclusión y política pública</h2>
 
-      <p>Los derechos de las personas mayores incluyen acceso a servicios de salud, protección contra el abuso, participación en la vida pública y acceso a beneficios sociales. Los gobiernos y organizaciones deben garantizar prestaciones económicas adecuadas, transporte accesible, atención geriátrica y programas de inclusión laboral y digital.</p>
+      <p>Los derechos de las personas mayores incluyen...</p>
 
+      <!-- ⬇⬇ ARREGLO: imagen dentro de una col -->
       <div class="fila">
         <div class="col">
           <h4>Medidas que funcionan</h4>
           <ul>
-            <li>Centros de atención diurna y programas intergeneracionales en escuelas y bibliotecas.</li>
-            <li>Capacitación digital para personas mayores para reducir brecha tecnológica.</li>
-            <li>Políticas urbanas que prioricen accesibilidad: rampas, bancos, transporte adaptado.</li>
+            <li>Centros de atención diurna...</li>
+            <li>Capacitación digital...</li>
+            <li>Políticas urbanas...</li>
           </ul>
         </div>
 
-        <img src="00.jpeg">
+        <div class="col">
+          <img src="00.jpeg">
+        </div>
       </div>
 
       <h3>Economía y empleo</h3>
-      <p>Promover oportunidades de trabajo flexible o voluntariado permite mantener redes sociales, sentido de propósito y un ingreso complementario en quienes lo deseen. Es importante también apoyar la jubilación digna y programas de reentrenamiento.</p>
+      <p>Promover oportunidades...</p>
     </section>
 
     <section class="card" aria-labelledby="s4">
       <h2 id="s4">IV. Tecnología, aprendizaje y participación</h2>
 
-      <p>La alfabetización digital es una herramienta poderosa para combatir aislamiento y facilitar el acceso a servicios. Cursos adaptados, programas con voluntarios jóvenes y dispositivos con interfaces sencillas potencian la autonomía: telemedicina, pagos electrónicos y comunicación con la familia.</p>
+      <p>La alfabetización digital...</p>
 
-      <div class="callout">
-        Un mentor digital intergeneracional (joven → adulto mayor) acelera la adopción tecnológica y fomenta la empatía entre edades.
-      </div>
+      <div class="callout">Un mentor digital...</div>
     </section>
 
     <section class="card" aria-labelledby="s5">
       <h2 id="s5">V. Video: reflexiones y propuestas</h2>
-      <p>Testimonios reales y propuestas para mejorar la calidad de vida del adulto mayor.</p>
+      <p>Testimonios reales...</p>
 
       <div class="video">
-        <div class="video-container">
-          <iframe 
-            src="https://drive.google.com/file/d/17DrdnxUk6f40-hwFVPQWH2pGnDS4_t8t/preview"
-            allow="autoplay; encrypted-media"
-            title="Video desde Google Drive">
-          </iframe>
-        </div>
+        <iframe 
+          src="https://drive.google.com/file/d/17DrdnxUk6f40-hwFVPQWH2pGnDS4_t8t/preview"
+          allow="autoplay; encrypted-media"
+          title="Video desde Google Drive">
+        </iframe>
       </div>
 
       <h4 style="margin-top:14px">Conclusión</h4>
-      <p>Garantizar un envejecimiento digno requiere esfuerzos coordinados: políticas públicas, servicios de salud preventivos, inclusión social y respeto intergeneracional. Cada comunidad puede diseñar acciones concretas adaptadas a su realidad; lo importante es priorizar la dignidad y participación de las personas mayores.</p>
+      <p>Garantizar un envejecimiento digno requiere...</p>
     </section>
 
   </div>
