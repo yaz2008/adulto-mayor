@@ -36,7 +36,7 @@
     p, li{font-size:15px;text-align:justify}
     ul{margin-left:18px}
 
-    /* fila con imagen a la derecha */
+    /* FILAS */
     .fila{
       display:flex;
       gap:20px;
@@ -47,19 +47,19 @@
       flex:1;
     }
 
-    /* ⬇⬇ CORRECCIÓN PARA QUE NO SE SALGAN EN CELULAR */
+    /* ✅ IMÁGENES RESPONSIVAS QUE NO SE SALEN */
     .fila img{
       width:100%;
       max-width:420px;
-      border-radius:12px;
       height:auto;
+      border-radius:12px;
       object-fit:cover;
       box-shadow:0 8px 20px rgba(5,30,60,0.08);
       display:block;
     }
 
-    /* alterna: imagen a la izquierda */
     .fila.reverse{flex-direction:row-reverse}
+
     .video{
       margin-top:12px;
       border-radius:12px;
@@ -70,14 +70,23 @@
 
     footer{text-align:center;color:#1b3b57;margin-top:18px;font-size:14px}
 
-    /* responsive */
+    /* 📱 RESPONSIVE EN CELULAR */
     @media (max-width:900px){
       .fila{flex-direction:column}
-      .fila img{max-width:100%;width:100%;height:auto}
+      .fila img{
+        max-width:100%;
+        width:100%;
+        height:auto;
+      }
     }
 
-    /* callout */
-    .callout{background:linear-gradient(90deg,#eef9ff,#f6fcff);padding:12px;border-radius:10px;border-left:4px solid var(--accent);margin:12px 0}
+    .callout{
+      background:linear-gradient(90deg,#eef9ff,#f6fcff);
+      padding:12px;
+      border-radius:10px;
+      border-left:4px solid var(--accent);
+      margin:12px 0
+    }
     .muted{color:#55728a;font-size:14px}
   </style>
 </head>
@@ -117,7 +126,6 @@
           </ul>
         </div>
 
-        <!-- ⬇⬇ IMAGEN CORREGIDA -->
         <img src="0.jpeg">
       </div>
 
@@ -140,7 +148,6 @@
           </ul>
         </div>
 
-        <!-- ⬇⬇ IMAGEN CORREGIDA -->
         <img src="00.jpeg">
       </div>
 
